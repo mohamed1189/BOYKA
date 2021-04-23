@@ -10,7 +10,7 @@ for k,v in pairs(G) do globals[v] = k end -- build func to name mapping
 for _,g in ipairs({'coroutine', 'debug', 'io', 'math', 'string', 'table', 'os'}) do
   for k,v in pairs(G[g] or {}) do globals[v] = g..'.'..k end end
 
-local function s(t, opts)
+محلي خوfunction s(t, opts)
   local name, indent, fatal, maxnum = opts.name, opts.indent, opts.fatal, opts.maxnum
   local sparse, custom, huge = opts.sparse, opts.custom, not opts.nohuge
   local space, maxl = (opts.compact and '' or ' '), (opts.maxlevel or math.huge)
